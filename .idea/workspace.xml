@@ -4,6 +4,7 @@
     <list default="true" id="60d46c57-3112-4c5c-9c2d-21848c6b16a7" name="Default" comment="" />
     <ignored path="minichat.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
