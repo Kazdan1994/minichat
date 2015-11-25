@@ -1,15 +1,25 @@
 <?php
-// Connexion à la base de données
+setcookie('pseudo', $_POST['pseudo'], time() + 365*24*3600, null, null, false, true); // On Ã©crit un cookie
+
+// Connexion Ã  la base de donnÃ©es
 try
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', '');
+    //VARIABLES
+    $host = 'localhost';
+    $dbname = 'minichat';
+    $charset = 'utf8';
+    $user = 'root';
+    $password = '';
+
+    // Objet $bdd de la classe PDO pour se connecter Ã  la bdd
+    $bdd = new PDO('mysql:host=' . $host . ';dbname=' . $dbname . ';charset=' . $charset, $user, $password);
 }
 catch(Exception $e)
 {
     die('Erreur : '.$e->getMessage());
 }
 
-// Insertion du message à l'aide d'une requête préparée
+// Insertion du message Ã  l'aide d'une requÃªte prÃ©parÃ©e
 $req = $bdd->prepare('INSERT INTO minichat (pseudo, message) VALUES(?, ?)');
 $req->execute(array($_POST['pseudo'], $_POST['message']));
 
